@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ethereal Seam | Futuristic Event Management</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&family=Inter:wght@300;400;500&family=Sora:wght@400;600;800&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="loader-overlay">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="glass-nav">
+        <div class="nav-container">
+            <div class="logo">ETHEREAL<span>SEAM</span></div>
+            <div class="nav-links">
+                <a href="#">Explore</a>
+                <a href="#">Venues</a>
+                <a href="#">Schedule</a>
+                <button class="btn-primary" onclick="openAuthModal()">Sign Up</button>
+            </div>
+        </div>
+    </nav>
+
+    <main id="smooth-wrapper">
+        <div id="smooth-content">
+            <!-- Hero Section -->
+            <section class="hero stitched" id="hero">
+                <div class="hero-bg-gradient"></div>
+                <div class="container">
+                    <div class="hero-content">
+                        <h1 class="reveal-text">Stitched with <br><span class="gradient-text">Pure Light</span></h1>
+                        <p class="reveal-text">Experience the future of events. A seamless weave of technology and live atmosphere.</p>
+                        <div class="search-bar-container">
+                            <input type="text" placeholder="Search events, vibes, locations..." class="glass-search">
+                            <button class="search-glow-btn">Search</button>
+                        </div>
+                    </div>
+                    <div class="floating-cards-container">
+                        <!-- Skeletons will be replaced by real cards -->
+                        <div class="event-card-skeleton skeleton"></div>
+                        <div class="event-card-skeleton skeleton"></div>
+                    </div>
+                </div>
+                <!-- Wave Divider -->
+                <div class="wave-divider">
+                    <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                        <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+                    </svg>
+                </div>
+            </section>
+
+            <!-- Trending Events -->
+            <section class="trending stitched" id="trending">
+                <div class="container">
+                    <div class="section-header">
+                        <h2>Trending <span class="accent-text">Now</span></h2>
+                        <p>Curated pulses from around the globe</p>
+                    </div>
+                    <div class="horizontal-scroll" id="trending-scroll">
+                        <!-- Skeletons -->
+                        <div class="trending-card-skeleton skeleton"></div>
+                        <div class="trending-card-skeleton skeleton"></div>
+                        <div class="trending-card-skeleton skeleton"></div>
+                    </div>
+                </div>
+                <div class="blur-fade"></div>
+            </section>
+
+            <!-- Categories -->
+            <section class="categories stitched" id="categories">
+                <div class="container">
+                    <div class="section-header text-center">
+                        <h2>Explore by <span class="gradient-text">Vibe</span></h2>
+                    </div>
+                    <div class="category-grid">
+                        <div class="cat-item skeleton"></div>
+                        <div class="cat-item skeleton"></div>
+                        <div class="cat-item skeleton"></div>
+                        <div class="cat-item skeleton"></div>
+                    </div>
+                </div>
+                <div class="wave-divider bottom">
+                    <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                        <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" class="shape-fill"></path>
+                    </svg>
+                </div>
+            </section>
+
+            <!-- Map Section -->
+            <section class="map-section" id="map">
+                <div class="container">
+                    <div class="map-container skeleton">
+                        <div class="map-overlay">
+                            <h3>Nearby Events</h3>
+                            <p>Find the glow in your city</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Footer -->
+            <footer class="glass-footer">
+                <div class="container">
+                    <div class="footer-grid">
+                        <div class="footer-brand">
+                            <div class="logo">ETHEREAL<span>SEAM</span></div>
+                            <p>The nexus of technology and live atmosphere.</p>
+                        </div>
+                        <div class="footer-links">
+                            <h4>Platform</h4>
+                            <a href="#">Explore</a>
+                            <a href="#">Venues</a>
+                            <a href="#">Security</a>
+                        </div>
+                        <div class="footer-links">
+                            <h4>Company</h4>
+                            <a href="#">About</a>
+                            <a href="#">Press</a>
+                            <a href="#">Careers</a>
+                        </div>
+                        <div class="footer-newsletter">
+                            <h4>Stay in the Loop</h4>
+                            <div class="input-glow-group">
+                                <input type="email" placeholder="Email pulse...">
+                                <button>→</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </main>
+
+    <!-- Auth Modal (Centered) -->
+    <div id="auth-modal" class="centered-modal">
+        <button class="modal-close" onclick="closeAuthModal()">×</button>
+        <div class="panel-content" style="margin-top: 20px;">
+            <h2 style="margin-bottom: 20px; font-family: var(--font-heading);">Join <span class="accent-text">Ethereal</span></h2>
+            <div style="margin-bottom: 15px;">
+                <input type="email" placeholder="Email Address" class="glass-search" style="width: 100%; border-radius: 10px;">
+            </div>
+            <div style="margin-bottom: 20px;">
+                <input type="password" placeholder="Password" class="glass-search" style="width: 100%; border-radius: 10px;">
+            </div>
+            <button class="btn-checkout gradient-btn" id="auth-submit-btn" onclick="submitAuth()">Sign Up / Sign In</button>
+        </div>
+    </div>
+
+    <!-- Booking Panel (Slide-in) -->
+    <div id="booking-panel" class="glass-panel">
+        <button class="close-panel">×</button>
+        <div class="panel-content">
+            <div class="event-mini-header skeleton"></div>
+            <div class="ticket-selection">
+                <div class="ticket-row">
+                    <div class="ticket-info">
+                        <h5>Standard Access</h5>
+                        <p>$120</p>
+                    </div>
+                    <div class="counter">
+                        <button class="minus">-</button>
+                        <span>0</span>
+                        <button class="plus">+</button>
+                    </div>
+                </div>
+            </div>
+            <button class="btn-checkout gradient-btn">Complete Booking</button>
+        </div>
+    </div>
+
+    <!-- Profile Panel (Slide-in left) -->
+    <div id="profile-panel" class="glass-panel left-panel">
+        <button class="close-profile" onclick="closeProfilePanel()">×</button>
+        <div class="panel-content">
+            <h2 class="gradient-text" style="margin-bottom: 30px;">My Profile</h2>
+            <div class="profile-display" id="profile-display-section">
+                <div class="avatar-circle"></div>
+                <h3 id="profile-name" style="font-size: 1.5rem; margin-bottom: 5px;">Alex Vanguard</h3>
+                <p id="profile-email" style="color: var(--text-dim); margin-bottom: 20px;">alex.v@ethereal.com</p>
+                <div class="cart-summary" style="background: var(--glass-bg); padding: 15px; border-radius: 15px; border: 1px solid var(--glass-border); margin-bottom: 20px; text-align: left;">
+                    <h4>Recent Orders</h4>
+                    <p style="color: var(--text-dim); font-size: 0.9rem;" id="recent-orders">No recent orders yet.</p>
+                </div>
+                <button class="btn-primary" style="width: 100%; margin-bottom: 10px;" onclick="toggleProfileEdit()">Edit Profile</button>
+                <button class="btn-checkout" style="width: 100%; background: transparent; border: 1px solid var(--accent-magenta); color: var(--accent-magenta);" onclick="logout()">Log Out</button>
+            </div>
+            <div class="profile-edit" id="profile-edit-section" style="display:none;">
+                <label style="color: var(--text-dim); font-size: 0.8rem; margin-bottom: 5px; display: block;">Full Name</label>
+                <input type="text" id="edit-name" class="glass-search" value="Alex Vanguard" style="margin-bottom:15px; width:100%; border-radius: 10px;">
+                <label style="color: var(--text-dim); font-size: 0.8rem; margin-bottom: 5px; display: block;">Email Address</label>
+                <input type="email" id="edit-email" class="glass-search" value="alex.v@ethereal.com" style="margin-bottom:20px; width:100%; border-radius: 10px;">
+                <button class="gradient-btn" style="margin-top: 0;" onclick="saveProfile()">Save Changes</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Checkout/Payment Modal -->
+    <div id="checkout-modal" class="centered-modal" style="max-width: 500px;">
+        <button class="modal-close" onclick="closeCheckout()">×</button>
+        <div class="panel-content" style="margin-top: 20px;">
+            <h2 class="gradient-text" style="margin-bottom: 20px;">Checkout</h2>
+            
+            <div class="cart-summary" style="margin-bottom: 20px; background: var(--glass-bg); padding: 15px; border-radius: 15px; border: 1px solid var(--glass-border);">
+                <h4 style="margin-bottom: 10px;">Order Summary</h4>
+                <div style="display: flex; justify-content: space-between; margin-top:10px;">
+                    <span id="checkout-item-name">Standard Access</span>
+                    <span id="checkout-item-qty">x0</span>
+                </div>
+                <hr style="border: 1px solid var(--glass-border); margin: 15px 0;">
+                <div style="display: flex; justify-content: space-between; font-size: 1.2rem; font-weight: bold;">
+                    <span>Total Amount</span>
+                    <span id="checkout-total-price" class="accent-text">$0</span>
+                </div>
+            </div>
+
+            <h4 style="margin-bottom: 15px;">Payment Method</h4>
+            <div class="payment-methods" style="display: flex; gap: 10px; margin-bottom: 20px;">
+                <button class="payment-btn active" id="btn-card" onclick="selectPayment('card')">Card</button>
+                <button class="payment-btn" id="btn-upi" onclick="selectPayment('upi')">UPI</button>
+                <button class="payment-btn" id="btn-net" onclick="selectPayment('net')">Net Banking</button>
+            </div>
+
+            <div id="payment-card-details">
+                <input type="text" placeholder="Card Number" class="glass-search" style="width: 100%; border-radius: 10px; margin-bottom: 10px;">
+                <div style="display: flex; gap: 10px; margin-bottom: 10px;">
+                    <input type="text" placeholder="MM/YY" class="glass-search" style="width: 50%; border-radius: 10px;">
+                    <input type="text" placeholder="CVV" class="glass-search" style="width: 50%; border-radius: 10px;">
+                </div>
+                <input type="text" placeholder="Cardholder Name" class="glass-search" style="width: 100%; border-radius: 10px; margin-bottom: 10px;">
+            </div>
+
+            <div id="payment-upi-details" style="display:none;">
+                <p style="font-size: 0.85rem; color: var(--text-dim); margin-bottom: 10px;">Select UPI App</p>
+                <div style="display: flex; gap: 10px; margin-bottom: 15px; flex-wrap: wrap;">
+                    <button class="payment-app-btn app-gpay" onclick="selectUpiApp(this, 'gpay')">
+                        <img src="https://cdn.iconscout.com/icon/free/png-256/google-pay-2038779-1721573.png" alt="GPay" style="width: 20px; height: 20px; object-fit: contain; filter: brightness(0) invert(1);"> GPay
+                    </button>
+                    <button class="payment-app-btn app-phonepe" onclick="selectUpiApp(this, 'phonepe')">
+                        <img src="https://download.logo.wine/logo/PhonePe/PhonePe-Logo.wine.png" alt="PhonePe" style="width: 20px; height: 20px; object-fit: cover; filter: brightness(0) invert(1);"> PhonePe
+                    </button>
+                    <button class="payment-app-btn app-paytm" onclick="selectUpiApp(this, 'paytm')">
+                        <img src="https://cdn.iconscout.com/icon/free/png-256/paytm-226448.png" alt="Paytm" style="width: 20px; height: 20px; object-fit: contain; filter: brightness(0) invert(1);"> Paytm
+                    </button>
+                    <button class="payment-app-btn app-fampay" onclick="selectUpiApp(this, 'fampay')">
+                        FamPay
+                    </button>
+                </div>
+                
+                <div style="text-align: center; margin-bottom: 15px; position: relative;">
+                    <hr style="border: none; border-top: 1px solid var(--glass-border);">
+                    <span style="position: absolute; top: -10px; left: 50%; transform: translateX(-50%); background: var(--bg-dark); padding: 0 10px; color: var(--text-dim); font-size: 0.8rem;">OR</span>
+                </div>
+
+                <input type="text" id="upi-id-input" placeholder="Enter UPI ID (e.g. user@ybl)" class="glass-search" style="width: 100%; border-radius: 10px; margin-bottom: 10px;">
+                <p style="font-size: 0.8rem; color: var(--text-dim); margin-bottom: 10px;">A payment request will be sent to your selected UPI app.</p>
+            </div>
+
+            <div id="payment-net-details" style="display:none;">
+                <select class="glass-search" style="width: 100%; border-radius: 10px; margin-bottom: 10px; background: var(--glass-bg); appearance: none;">
+                    <option style="color: black;">Select Bank</option>
+                    <option style="color: black;">HDFC Bank</option>
+                    <option style="color: black;">ICICI Bank</option>
+                    <option style="color: black;">State Bank of India</option>
+                    <option style="color: black;">Axis Bank</option>
+                </select>
+            </div>
+
+            <button class="gradient-btn" id="pay-now-btn" onclick="processPayment()">Pay Securely</button>
+        </div>
+    </div>
+
+    <!-- SMS Notification -->
+    <div id="sms-notification" class="sms-notification">
+        <div class="sms-icon">📱</div>
+        <div class="sms-content">
+            <h4>Payment Successful!</h4>
+            <p>Your booking for <strong id="sms-item-name">Event</strong> is confirmed. Check your profile for details.</p>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
